@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condor Bike - Especialista em Bicicletas | São José dos Campos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #008000; /* Verde - natureza, ecologia */
+            --secondary-color: #FF4500; /* Laranja - energia, movimento */
+            --accent-color: #1E90FF; /* Azul - velocidade, confiança */
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .bg-primary-custom {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+        
+        .bg-secondary-custom {
+            background-color: var(--secondary-color) !important;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #006400;
+            border-color: #006400;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 128, 0, 0.2);
+        }
+        
+        .btn-secondary-custom {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary-custom:hover {
+            background-color: #e03e00;
+            border-color: #e03e00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 69, 0, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 100, 0, 0.8)), url('https://images.unsplash.com/photo-1530893608541-1daf8db2a763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 128, 0, 0.3) 0%, rgba(255, 69, 0, 0.3) 100%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-card {
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            background-color: white;
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        
+        .highlight-box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 2px solid #f0f0f0;
+        }
+        
+        .highlight-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: var(--primary-color);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            font-weight: 800;
+            color: var(--dark-color);
+            text-transform: uppercase;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .stats-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        
+        .stats-label {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .stats-box {
+            text-align: center;
+            padding: 25px 15px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .stats-box:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-5px);
+        }
+        
+        .call-to-action {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #006400 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .call-to-action:before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+        }
+        
+        .call-to-action:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 69, 0, 0.1);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .product-category {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .product-category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-category:hover img {
+            transform: scale(1.1);
+        }
+        
+        .product-category .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            color: white;
+            padding: 25px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding-top: 60px;
+        }
+        
+        .contact-info li {
+            margin-bottom: 12px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .floating-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        
+        .floating-button:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .floating-button.whatsapp {
+            background-color: #25D366;
+        }
+        
+        .floating-button.phone {
+            background-color: var(--primary-color);
+        }
+        
+        .badge-promo {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        
+        .bike-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 128, 0, 0.1);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .services-banner {
+            background: linear-gradient(rgba(0, 128, 0, 0.9), rgba(30, 144, 255, 0.9)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+        
+        .brands-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            border-radius: 12px;
+        }
+        
+        .brand-logo {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .brand-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        .promo-banner {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .promo-banner h3 {
+            margin-bottom: 10px;
+        }
+        
+        .bike-animation {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+            margin: 30px 0;
+        }
+        
+        .bike-animation i {
+            position: absolute;
+            font-size: 3rem;
+            color: var(--primary-color);
+            animation: moveBike 10s linear infinite;
+        }
+        
+        @keyframes moveBike {
+            0% { left: -50px; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/5512999999999?text=Olá%20Condor%20Bike!%20Gostaria%20de%20informações%20sobre%20bicicletas." target="_blank" class="floating-button whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="tel:+551233333333" class="floating-button phone">
+            <i class="bi bi-telephone"></i>
+        </a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-bicycle me-2"></i>CONDOR BIKE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bicicletas">Bicicletas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acessorios">Acessórios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+                <a href="#bicicletas" class="btn btn-secondary-custom ms-lg-4 mt-3 mt-lg-0">
+                    <i class="bi bi-cart3 me-2"></i>Comprar Agora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section mt-5">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-7">
+                    <h1 class="hero-title">LIBERDADE SOBRE DUAS <span class="text-warning">RODAS</span></h1>
+                    <p class="lead mb-4">Desde 2020, somos especialistas em bicicletas, triciclos e acessórios em São José dos Campos. Qualidade, preço justo e paixão pelo ciclismo.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#bicicletas" class="btn btn-secondary-custom btn-lg">Ver Bicicletas <i class="bi bi-arrow-right ms-1"></i></a>
+                        <a href="#servicos" class="btn btn-outline-light btn-lg">Nossos Serviços <i class="bi bi-tools ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="highlight-box position-relative">
+                        <div class="badge-promo">OFERTA ESPECIAL</div>
+                        <h4 class="mb-3">Kit Iniciante Completo</h4>
+                        <p class="mb-3">Bicicleta + Capacete + Luva + Garrafinha por apenas:</p>
+                        <h3 class="text-primary-custom">R$ 1.299,90</h3>
+                        <p class="text-muted small"><s>R$ 1.799,90</s> (27% OFF)</p>
+                        <a href="#contato" class="btn btn-primary-custom w-100">Aproveitar Oferta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animação de Bicicleta -->
+    <div class="bike-animation">
+        <i class="bi bi-bicycle"></i>
+    </div>
+
+    <!-- Sobre a Empresa -->
+    <section id="sobre" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h2 class="section-title center">Sobre a Condor Bike</h2>
+                    <p class="lead">Especializada em comércio de bicicletas e acessórios desde 2020, promovendo mobilidade sustentável e qualidade de vida em São José dos Campos.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <div class="bike-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h4>Nossa História</h4>
+                        <p>A <strong>Condor Bike Comércio de Bicicletas LTDA</strong> foi fundada em <strong>04 de fevereiro de 2020</strong> na cidade de <strong>São José dos Campos, São Paulo</strong>. Começamos com a missão de fornecer bicicletas de qualidade para toda a família e hoje somos referência na região.</p>
+                        <a href="#contato" class="btn btn-primary-custom mt-2">Visite Nossa Loja</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <div class="bike-icon">
+                            <i class="bi bi-file-text"></i>
+                        </div>
+                        <h4>Dados Cadastrais</h4>
+                        <p><strong>CNPJ:</strong> 36.243.649/0001-80</p>
+                        <p><strong>Razão Social:</strong> Condor Bike Comércio de Bicicletas LTDA</p>
+                        <p><strong>Situação Cadastral:</strong> <span class="badge bg-success">Ativa</span></p>
+                        <p><strong>Atividade Principal:</strong> 47.63-6-03 - Comércio varejista de bicicletas e triciclos; peças e acessórios.</p>
+                        <a href="#contato" class="btn btn-secondary-custom mt-2">Certificados</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Estatísticas -->
+            <div class="row mt-5">
+                <div class="col-12 text-center mb-5">
+                    <h3>Nossa Trajetória em Números</h3>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <div class="stats-number">3+</div>
+                        <div class="stats-label">Anos no Mercado</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <div class="stats-number">500+</div>
+                        <div class="stats-label">Bicicletas Vendidas</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <div class="stats-number">1.000+</div>
+                        <div class="stats-label">Clientes Satisfeitos</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <div class="stats-number">98%</div>
+                        <div class="stats-label">Satisfação do Cliente</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner de Promoção -->
+    <div class="container">
+        <div class="promo-banner">
+            <h3><i class="bi bi-megaphone me-2"></i>PROMOÇÃO DE ANIVERSÁRIO!</h3>
+            <p class="mb-0">3 anos de Condor Bike! Até 30% de desconto em toda linha de acessórios e 10% em bicicletas. Válido até 30/06/2023.</p>
+            <a href="#contato" class="btn btn-light mt-3">Saiba Mais</a>
+        </div>
+    </div>
+
+    <!-- Bicicletas -->
+    <section id="bicicletas" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Nossas Bicicletas</h2>
+                    <p class="lead">Temos o modelo perfeito para cada necessidade, desde passeio até competição.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="highlight-box text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-gear-wide"></i>
+                        </div>
+                        <h4>Bicicletas Urbanas</h4>
+                        <p>Perfeitas para o dia a dia na cidade, com conforto, praticidade e design moderno.</p>
+                        <a href="#contato" class="btn btn-primary-custom mt-3">Ver Modelos</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="highlight-box text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-mountain"></i>
+                        </div>
+                        <h4>Mountain Bikes</h4>
+                        <p>Para trilhas e aventuras, com suspensão, pneus largos e resistência extrema.</p>
+                        <a href="#contato" class="btn btn-primary-custom mt-3">Ver Modelos</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="highlight-box text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-speedometer2"></i>
+                        </div>
+                        <h4>Bicicletas de Corrida</h4>
+                        <p>Leves, aerodinâmicas e velozes para quem busca performance e velocidade.</p>
+                        <a href="#contato" class="btn btn-primary-custom mt-3">Ver Modelos</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p class="lead mb-4">Também temos triciclos infantis e para adultos, bicicletas dobráveis e muito mais!</p>
+                    <a href="#contato" class="btn btn-secondary-custom btn-lg">Solicitar Catálogo Completo <i class="bi bi-whatsapp ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acessórios -->
+    <section id="acessorios" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Acessórios e Peças</h2>
+                    <p class="lead">Tudo o que você precisa para sua bicicleta e para pedalar com segurança e conforto.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Capacetes">
+                        <div class="overlay">
+                            <h3 class="mb-2">Capacetes</h3>
+                            <p class="mb-0">Segurança em primeiro lugar</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1591361797393-95d7a1d6b221?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Roupas">
+                        <div class="overlay">
+                            <h3 class="mb-2">Roupas Esportivas</h3>
+                            <p class="mb-0">Conforto para pedalar</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1531048563740-72bb3ab5c3b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Peças">
+                        <div class="overlay">
+                            <h3 class="mb-2">Peças e Ferramentas</h3>
+                            <p class="mb-0">Manutenção e reparos</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Iluminação">
+                        <div class="overlay">
+                            <h3 class="mb-2">Iluminação</h3>
+                            <p class="mb-0">Visibilidade e segurança</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bagagens">
+                        <div class="overlay">
+                            <h3 class="mb-2">Bagagens</h3>
+                            <p class="mb-0">Alforges e bolsas</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Segurança">
+                        <div class="overlay">
+                            <h3 class="mb-2">Segurança</h3>
+                            <p class="mb-0">Cadeados e travas</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="#contato" class="btn btn-primary-custom btn-lg">Ver Todos os Acessórios <i class="bi bi-arrow-right-circle ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Nossos Serviços</h2>
+                    <p class="lead">Além de vender, cuidamos da sua bicicleta com manutenção especializada.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="bike-icon mx-auto">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <h5>Manutenção</h5>
+                        <p>Revisão completa, ajustes, troca de peças e regulagem de câmbio e freios.</p>
+                        <a href="#contato" class="btn btn-sm btn-outline-primary-custom">Agendar Serviço</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="bike-icon mx-auto">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h5>Personalização</h5>
+                        <p>Customização de cores, adesivos, upgrades de componentes e muito mais.</p>
+                        <a href="#contato" class="btn btn-sm btn-outline-primary-custom">Saber Mais</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="bike-icon mx-auto">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h5>Entrega e Montagem</h5>
+                        <p>Entregamos em São José dos Campos com montagem profissional inclusa.</p>
+                        <a href="#contato" class="btn btn-sm btn-outline-primary-custom">Consultar Zonas</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="bike-icon mx-auto">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+                        <h5>Test Drive</h5>
+                        <p>Experimente antes de comprar! Teste as bicicletas em nosso espaço seguro.</p>
+                        <a href="#contato" class="btn btn-sm btn-outline-primary-custom">Agendar Teste</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Banner de Serviços -->
+            <div class="services-banner mt-5">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="mb-3">MANUTENÇÃO PREVENTIVA</h2>
+                        <p class="lead mb-4">Evite problemas! Traga sua bicicleta para uma revisão completa e garanta sua segurança nas pedaladas.</p>
+                        <a href="#contato" class="btn btn-light btn-lg">Agendar Revisão <i class="bi bi-calendar-check ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marcas Parceiras -->
+    <div class="brands-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Marcas Parceiras</h2>
+                    <p class="lead">Trabalhamos apenas com as melhores marcas do mercado.</p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6">
+                    <div class="brand-logo">
+                        <i class="bi bi-bicycle fs-1 text-primary-custom"></i>
+                        <span class="ms-2 fw-bold">CALOI</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="brand-logo">
+                        <i class="bi bi-bicycle fs-1 text-primary-custom"></i>
+                        <span class="ms-2 fw-bold">GROW</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="brand-logo">
+                        <i class="bi bi-bicycle fs-1 text-primary-custom"></i>
+                        <span class="ms-2 fw-bold">SHIMANO</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="brand-logo">
+                        <i class="bi bi-bicycle fs-1 text-primary-custom"></i>
+                        <span class="ms-2 fw-bold">BELL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Depoimentos -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">O Que Nossos Clientes Dizem</h2>
+                    <p class="lead">A satisfação de quem já pedala com a Condor Bike.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Comprei minha primeira mountain bike na Condor Bike e fui muito bem atendido. A equipe é super atenciosa e a bicicleta é de ótima qualidade. Recomendo!"
+                        </div>
+                        <div class="testimonial-author">Carlos Mendes, 35 anos</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Levo minhas bicicletas sempre na manutenção preventiva. O serviço é excelente, rápido e com preço justo. Minha família toda compra na Condor!"
+                        </div>
+                        <div class="testimonial-author">Ana Paula, 42 anos</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Como lojista, trabalho com várias fornecedoras, mas a Condor Bike é a mais confiável. Produtos de qualidade e entrega sempre no prazo."
+                        </div>
+                        <div class="testimonial-author">Roberto Santos, Lojista</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row align-items-center position-relative" style="z-index: 10;">
+                <div class="col-lg-8">
+                    <h3 class="mb-3">PRONTO PARA COMEÇAR A PEDALAR?</h3>
+                    <p class="mb-0">Entre em contato agora e receba uma consultoria gratuita para escolher a bicicleta perfeita para você!</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#contato" class="btn btn-light btn-lg fw-bold">Falar com Especialista <i class="bi bi-chat-dots ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contato -->
+    <section id="contato" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Entre em Contato</h2>
+                    <p class="lead">Estamos prontos para atender você e tirar todas as suas dúvidas sobre bicicletas!</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <h4 class="mb-4">Informações de Contato</h4>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="bi bi-geo-alt"></i> <strong>Localização:</strong> São José dos Campos, São Paulo - Brasil</li>
+                        <li><i class="bi bi-building"></i> <strong>CNPJ:</strong> 36.243.649/0001-80</li>
+                        <li><i class="bi bi-building"></i> <strong>Razão Social:</strong> Condor Bike Comércio de Bicicletas LTDA</li>
+                        <li><i class="bi bi-calendar-check"></i> <strong>Fundação:</strong> 04 de Fevereiro de 2020</li>
+                        <li><i class="bi bi-check-circle"></i> <strong>Situação Cadastral:</strong> Ativa</li>
+                        <li><i class="bi bi-briefcase"></i> <strong>Atividade:</strong> Comércio varejista de bicicletas e triciclos; peças e acessórios</li>
+                        <li><i class="bi bi-telephone"></i> <strong>Telefone:</strong> (12) 3333-3333</li>
+                        <li><i class="bi bi-whatsapp"></i> <strong>WhatsApp:</strong> (12) 99999-9999</li>
+                        <li><i class="bi bi-envelope"></i> <strong>E-mail:</strong> contato@condorbike.com.br</li>
+                    </ul>
+                    
+                    <div class="mt-4">
+                        <h5>Siga a Condor Bike</h5>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-primary-custom fs-4"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-primary-custom fs-4"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-primary-custom fs-4"><i class="bi bi-youtube"></i></a>
+                            <a href="#" class="text-primary-custom fs-4"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="highlight-box">
+                        <h4 class="mb-4">Envie sua Mensagem</h4>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome Completo *</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefone" class="form-label">Telefone/WhatsApp *</label>
+                                <input type="tel" class="form-control" id="telefone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="assunto" class="form-label">Assunto *</label>
+                                <select class="form-select" id="assunto" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="orcamento">Solicitar Orçamento</option>
+                                    <option value="bicicleta">Informação sobre Bicicleta</option>
+                                    <option value="manutencao">Agendar Manutenção</option>
+                                    <option value="duvida">Tirar Dúvida</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label">Mensagem *</label>
+                                <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom btn-lg w-100">Enviar Mensagem <i class="bi bi-send ms-1"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-3"><i class="bi bi-bicycle me-2"></i>CONDOR BIKE</h4>
+                    <p>Especializada em comércio de bicicletas, triciclos, peças e acessórios desde 2020. Qualidade, preço justo e paixão pelo ciclismo.</p>
+                    <a href="#inicio" class="btn btn-sm btn-outline-light mt-2">Voltar ao Topo <i class="bi bi-arrow-up ms-1"></i></a>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#inicio" class="text-light text-decoration-none">Início</a></li>
+                        <li class="mb-2"><a href="#sobre" class="text-light text-decoration-none">Sobre a Empresa</a></li>
+                        <li class="mb-2"><a href="#bicicletas" class="text-light text-decoration-none">Bicicletas</a></li>
+                        <li class="mb-2"><a href="#acessorios" class="text-light text-decoration-none">Acessórios</a></li>
+                        <li class="mb-2"><a href="#servicos" class="text-light text-decoration-none">Serviços</a></li>
+                        <li class="mb-2"><a href="#contato" class="text-light text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Informações Legais</h5>
+                    <p><strong>Condor Bike Comércio de Bicicletas LTDA</strong></p>
+                    <p>CNPJ: 36.243.649/0001-80</p>
+                    <p>São José dos Campos/SP</p>
+                    <p>Atividade: 47.63-6-03 - Comércio varejista de bicicletas e triciclos; peças e acessórios</p>
+                    <p>Fundada em: 04/02/2020</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 Condor Bike - Condor Bike Comércio de Bicicletas LTDA. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Desenvolvido com <i class="bi bi-heart-fill text-secondary"></i> para quem ama pedalar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu contato! Em breve nossa equipe entrará em contato.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animação da bicicleta
+        document.addEventListener('DOMContentLoaded', function() {
+            const bikeIcon = document.querySelector('.bike-animation i');
+            if (bikeIcon) {
+                // Cria várias bicicletas para o efeito
+                const bikeAnimation = document.querySelector('.bike-animation');
+                for (let i = 0; i < 3; i++) {
+                    const newBike = bikeIcon.cloneNode(true);
+                    newBike.style.animationDelay = `${i * 3}s`;
+                    bikeAnimation.appendChild(newBike);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
